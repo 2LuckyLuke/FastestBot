@@ -1,3 +1,6 @@
+package com.fastestbot.luckyluke;
+
+import com.fastestbot.luckyluke.Main;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -17,7 +20,7 @@ public class Commands extends ListenerAdapter {
         }
 
         /* info
-        if (args[0].equalsIgnoreCase(Main.prefix + "info")){
+        if (args[0].equalsIgnoreCase(com.fastestbot.luckyluke.Main.prefix + "info")){
             EmbedBuilder info = new EmbedBuilder();
             info.setTitle("DisCart Bot Information");
             info.setDescription("This is team Deltas attempt to create the best letter-trading bot");
@@ -35,7 +38,7 @@ public class Commands extends ListenerAdapter {
         }
 
         /* clear command
-        if (args[0].equalsIgnoreCase(Main.prefix + "clear")) {
+        if (args[0].equalsIgnoreCase(com.fastestbot.luckyluke.Main.prefix + "clear")) {
             try {
                 int amountToClear = Integer.parseInt(args[1]) + 1;
                 if (amountToClear > 0){
@@ -44,14 +47,14 @@ public class Commands extends ListenerAdapter {
                     event.getChannel().deleteMessages(messages).complete();
                 }
             }catch (Exception e){
-                event.getChannel().sendMessage("The clear command requires an integer as argument. I.e.: " + Main.prefix + "clear 5 (deletes the last 5 messages)").queue();
+                event.getChannel().sendMessage("The clear command requires an integer as argument. I.e.: " + com.fastestbot.luckyluke.Main.prefix + "clear 5 (deletes the last 5 messages)").queue();
                 throw new IllegalArgumentException("clear command: no integer as argument");
             }
         }
         */
 
         /* kill command
-        if (args[0].equalsIgnoreCase(Main.prefix + "kill")){
+        if (args[0].equalsIgnoreCase(com.fastestbot.luckyluke.Main.prefix + "kill")){
             event.getChannel().sendMessage("shutting down").complete();
             List<Message> messages = event.getChannel().getHistory().retrievePast(2).complete();
             event.getChannel().deleteMessages(messages).complete();

@@ -1,3 +1,5 @@
+package com.fastestbot.luckyluke;
+
 import javax.security.auth.login.LoginException;
 
 import net.dv8tion.jda.api.JDA;
@@ -18,7 +20,5 @@ public class Main {
         jda.getPresence().setActivity(Activity.streaming("Imagine this happening in 2021", "https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
         jda.addEventListener(new Commands());
         jda.addEventListener(new VoiceHandler());
-
-
     }
 }
