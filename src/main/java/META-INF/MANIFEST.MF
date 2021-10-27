@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-com.fastestbot.luckyluke.Main-Class: com.fastestbot.luckyluke.Main
+Main-Class: com.fastestbot.luckyluke.Main
 

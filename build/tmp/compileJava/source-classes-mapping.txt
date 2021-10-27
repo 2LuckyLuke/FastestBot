@@ -1,6 +1,6 @@
-Commands.java
- Commands
-Main.java
- Main
-VoiceHandler.java
- VoiceHandler
+com/fastestbot/luckyluke/Main.java
+ com.fastestbot.luckyluke.Main
+com/fastestbot/luckyluke/VoiceHandler.java
+ com.fastestbot.luckyluke.VoiceHandler
+com/fastestbot/luckyluke/Commands.java
+ com.fastestbot.luckyluke.Commands

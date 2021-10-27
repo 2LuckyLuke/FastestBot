@@ -13,5 +13,5 @@ D
 META-INF/MANIFEST.MF,2\e\2e8cf92205ec303e7304888d382cb6a8cf5f56ba
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
-K
-src/main/java/Commands.java,6\2\623202317b1068c4860f7b9802e56d9e09ad9788
+P
+ .idea/dictionaries/LuckyLuke.xml,8\7\874bf2bdc1a8135d854229e1c254fe142f66dcdd
