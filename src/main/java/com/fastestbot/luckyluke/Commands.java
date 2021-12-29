@@ -16,11 +16,13 @@ public class Commands extends ListenerAdapter {
                 ){
                 event.getMessage().addReaction("U+2B06").queue();
                 event.getMessage().addReaction("U+2B07").queue();
+                System.out.println("User '" + event.getAuthor().getName() + "' has sent a meme; adding up and down votes.");
             }
         }
         if (args[0].equalsIgnoreCase(Main.prefix + "ping")){
             event.getChannel().sendTyping().queue();
             event.getChannel().sendMessage("pong").queue();
+            System.out.println("User '" + event.getAuthor().getName() + "' has requested a pong; sending it now.");
         }
     }
 }
