@@ -24,5 +24,12 @@ public class Commands extends ListenerAdapter {
             event.getChannel().sendMessage("pong").queue();
             System.out.println("User '" + event.getAuthor().getName() + "' has requested a pong; sending it now.");
         }
+
+        if (args[0].equalsIgnoreCase(Main.prefix + "fragfinn")){
+            event.getChannel().sendTyping().queue();
+            String response = "<@561491781733187584> ";
+            response = response + event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "));
+            event.getChannel().sendMessage(response);
+        }
     }
 }
