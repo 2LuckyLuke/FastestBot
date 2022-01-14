@@ -7,12 +7,13 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Commands extends ListenerAdapter {
     public void onGuildMessageReceived(GuildMessageReceivedEvent event){
-        String[] args = event.getMessage().getContentRaw().split(":");
+        String[] args = event.getMessage().getContentRaw().split(" ");
+        String[] linkCheck = event.getMessage().getContentRaw().split(":");
 
         if (event.getChannel().getId().equals("663522966633709568")) {
             if (!event.getMessage().getAttachments().isEmpty()
-                    || args[0].equalsIgnoreCase("http")
-                    || args[0].equalsIgnoreCase("https")
+                    || linkCheck[0].equalsIgnoreCase("http")
+                    || linkCheck[0].equalsIgnoreCase("https")
                 ){
                 event.getMessage().addReaction("U+2B06").queue();
                 event.getMessage().addReaction("U+2B07").queue();
@@ -21,7 +22,7 @@ public class Commands extends ListenerAdapter {
         }
         if (args[0].equalsIgnoreCase(Main.prefix + "ping")){
             event.getChannel().sendTyping().queue();
-            event.getChannel().sendMessage("pong").queue();
+            event.getChannel().sendMessage("pong").complete();
             System.out.println("User '" + event.getAuthor().getName() + "' has requested a pong; sending it now.");
         }
 
@@ -29,7 +30,8 @@ public class Commands extends ListenerAdapter {
             event.getChannel().sendTyping().queue();
             String response = "<@561491781733187584> ";
             response = response + event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "));
-            event.getChannel().sendMessage(response);
+            event.getChannel().sendMessage(response).complete();
+            System.out.println("User '" + event.getAuthor().getName() + "' has asked Finn for help: " + response);
         }
     }
 }
