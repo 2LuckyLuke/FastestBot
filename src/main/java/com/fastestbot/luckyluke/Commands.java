@@ -31,6 +31,7 @@ public class Commands extends ListenerAdapter {
             String response = "<@561491781733187584> ";
             response = response + event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "));
             event.getChannel().sendMessage(response).complete();
+            event.getMessage().delete().complete();
             System.out.println("User '" + event.getAuthor().getName() + "' has asked Finn for help: " + response);
         }
     }
