@@ -1,6 +1,7 @@
 package com.fastestbot.luckyluke;
 
 import com.fastestbot.luckyluke.Main;
+import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -33,6 +34,18 @@ public class Commands extends ListenerAdapter {
             event.getChannel().sendMessage(response).complete();
             event.getMessage().delete().complete();
             System.out.println("User '" + event.getAuthor().getName() + "' has asked Finn for help: " + response);
+        }
+
+        if (args[0].equalsIgnoreCase(Main.prefix + "poll")){
+
+            String response = event.getMessage().getContentRaw().substring(event.getMessage().getContentRaw().indexOf(" "));
+
+            Message message = event.getChannel().sendMessage(response).complete();
+            message.addReaction("U+2B06").queue();
+            message.addReaction("U+2B07").queue();
+
+            event.getMessage().delete().complete();
+            System.out.println("User '" + event.getAuthor().getName() + "' has added Reactions");
         }
     }
 }
